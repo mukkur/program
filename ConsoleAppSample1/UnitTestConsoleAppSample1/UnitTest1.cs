@@ -85,6 +85,8 @@ namespace UnitTestConsoleAppSample1
 
             Assert.AreEqual(4, Squared(2));
             Assert.AreEqual(9, Squared(3));
+            Assert.AreEqual(9, Squared(3)); //45454
+
         }
     }
 }
