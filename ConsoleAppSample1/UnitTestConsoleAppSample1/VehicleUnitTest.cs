@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace UnitTestConsoleAppSample1
 {
     [TestClass]
-   public  class VehicleUnitTest
+    public class VehicleUnitTest
     {
         [TestMethod]
         public void VehicleCanDrive()
@@ -29,7 +29,7 @@ namespace UnitTestConsoleAppSample1
         {
             var v = new Plane();
             v.Drive();
-            Assert.IsTrue(v.Log.Contains("Drove"));
+            Assert.IsTrue(v.Log.Contains("Flew"));
 
             //v.BreakDown();    // No Parameter
             //v.BreakDown = () => v.Log += "We are just fine.";    // No parameter
@@ -39,11 +39,11 @@ namespace UnitTestConsoleAppSample1
 
             v.BreakDown("Engine Failure");
             Assert.IsTrue(v.Log.Contains("Fell"));
-           
+
 
             v.BreakDown = x => v.Log += "We are just fine.";
             Assert.IsTrue(v.Log.Contains("Fell"));
-   
+
         }
 
         [TestMethod]
@@ -55,7 +55,7 @@ namespace UnitTestConsoleAppSample1
 
             v.Crash(x => x * 55);
             Assert.IsTrue(v.Log.Contains("55"));
-         
+
 
         }
 
@@ -71,12 +71,13 @@ namespace UnitTestConsoleAppSample1
 
         }
 
+        IEnumerable<int> numbers = Enumerable.Range(0, 100);
 
         [TestMethod]
         public void Linq101()
         {
             var numbers = new[] { 0, 1, 2, 3, 4, 5 };
-            
+
             // withough Linq
             var actual = new List<int>();
 
@@ -86,13 +87,406 @@ namespace UnitTestConsoleAppSample1
                 if (number % 2 == 0)
                     actual.Add(number);
             }
-            
+
             Assert.AreEqual(3, actual.Count);
 
-
-
+            Assert.AreEqual(3, numbers.Count(i => i % 2 == 0));
         }
 
+        [TestMethod]
+        public void LinqSelect()
+        {
+            var actual = numbers.Select(x => x * x);
+            Assert.IsTrue(actual.Contains(9801));
+            var actual12 = numbers.Where(x => x % 33 == 0).Select(x => x * x);
+        }
 
+        public void LinqComplex()
+        {
+            var Processes = System.Diagnostics.Process.GetProcesses();
+            var name = Processes.Select(x => new { x.ProcessName, ThreadCount = x.Threads.Count })
+                .Where(x => x.ThreadCount < 10);
+            var otherstuff = from x in Processes
+                             // where x.Modules.OfType<System.Diagnostics.ProcessModule>().Any(y=>y.ModuleMemorySize > 1000)
+                             where x.Modules.Count > 5
+                             orderby x.ProcessName
+                             select new { x.ProcessName, x.PeakWorkingSet64, x.Responding };
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+ 

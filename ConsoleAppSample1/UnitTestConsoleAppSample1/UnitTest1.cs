@@ -38,7 +38,7 @@ namespace UnitTestConsoleAppSample1
             d.LearnNewWord("Hellow");
             d.LearnNewWord("How Are You");
             var actual = d.Bark();
-            Assert.AreEqual("meyow", actual);
+            Assert.AreEqual("Are", actual);
         }
 
       
