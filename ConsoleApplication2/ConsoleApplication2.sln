@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2012 for Windows Desktop
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication2", "ConsoleApplication2\ConsoleApplication2.csproj", "{310410E5-FA07-4D7E-8DC4-CA17005C3E84}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer1", "DataLayer1\DataLayer1.csproj", "{EF8CAF2C-3BD4-40CE-8E8F-43ABD38BAB99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{310410E5-FA07-4D7E-8DC4-CA17005C3E84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{310410E5-FA07-4D7E-8DC4-CA17005C3E84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{310410E5-FA07-4D7E-8DC4-CA17005C3E84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF8CAF2C-3BD4-40CE-8E8F-43ABD38BAB99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF8CAF2C-3BD4-40CE-8E8F-43ABD38BAB99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF8CAF2C-3BD4-40CE-8E8F-43ABD38BAB99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF8CAF2C-3BD4-40CE-8E8F-43ABD38BAB99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

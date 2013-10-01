@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="Tabel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="TabelTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Tabel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="TabelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Students" EntityType="Tabel.Student" />
+          <EntitySet Name="Standards" EntityType="Tabel.Standard" />
+          <AssociationSet Name="StudentStandard" Association="Tabel.StudentStandard">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="Standard" EntitySet="Standards" />
+          </AssociationSet>
+          <EntitySet Name="Faculties" EntityType="Tabel.Faculty" />
+          <AssociationSet Name="StudentFaculty" Association="Tabel.StudentFaculty">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="Faculty" EntitySet="Faculties" />
+          </AssociationSet>
+          <EntitySet Name="Programs" EntityType="Tabel.Program" />
+          <AssociationSet Name="FacultyProgram" Association="Tabel.FacultyProgram">
+            <End Role="Faculty" EntitySet="Faculties" />
+            <End Role="Program" EntitySet="Programs" />
+          </AssociationSet>
+          <AssociationSet Name="StudentProgram" Association="Tabel.StudentProgram">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="Program" EntitySet="Programs" />
+          </AssociationSet>
+          <EntitySet Name="Campus" EntityType="Tabel.Campus" />
+          <AssociationSet Name="CampusStudent" Association="Tabel.CampusStudent">
+            <End Role="Campus" EntitySet="Campus" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="CampusFaculty" Association="Tabel.CampusFaculty">
+            <End Role="Campus" EntitySet="Campus" />
+            <End Role="Faculty" EntitySet="Faculties" />
+          </AssociationSet>
+          <AssociationSet Name="CampusProgram" Association="Tabel.CampusProgram">
+            <End Role="Campus" EntitySet="Campus" />
+            <End Role="Program" EntitySet="Programs" />
+          </AssociationSet>
+          <EntitySet Name="Cars" EntityType="Tabel.Car" />
+          <AssociationSet Name="StudentCar" Association="Tabel.StudentCar">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="Car" EntitySet="Cars" />
+          </AssociationSet>
+          <EntitySet Name="Accounts" EntityType="Tabel.Account" />
+          <AssociationSet Name="StudentAccount" Association="Tabel.StudentAccount">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FacultyProgram1" Association="Tabel.FacultyProgram1">
+            <End Role="Faculty" EntitySet="Faculties" />
+            <End Role="Program" EntitySet="Programs" />
+          </AssociationSet>
+          <AssociationSet Name="FacultyAccount" Association="Tabel.FacultyAccount">
+            <End Role="Faculty" EntitySet="Faculties" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <EntitySet Name="Branches" EntityType="Tabel.Branch" />
+          <AssociationSet Name="AccountBranch" Association="Tabel.AccountBranch">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Branch" EntitySet="Branches" />
+          </AssociationSet>
+          <EntitySet Name="Departments" EntityType="Tabel.Department" />
+          <AssociationSet Name="CampusDepartment" Association="Tabel.CampusDepartment">
+            <End Role="Campus" EntitySet="Campus" />
+            <End Role="Department" EntitySet="Departments" />
+          </AssociationSet>
+          <AssociationSet Name="DepartmentFaculty" Association="Tabel.DepartmentFaculty">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Faculty" EntitySet="Faculties" />
+          </AssociationSet>
+          <EntitySet Name="Projects" EntityType="Tabel.Project" />
+          <AssociationSet Name="DepartmentProject" Association="Tabel.DepartmentProject">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Project" EntitySet="Projects" />
+          </AssociationSet>
+          <EntitySet Name="Books" EntityType="Tabel.Book" />
+          <AssociationSet Name="StudentBook" Association="Tabel.StudentBook">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="Book" EntitySet="Books" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="FName" Nullable="false" />
+          <Property Type="String" Name="LName" Nullable="false" />
+          <Property Type="String" Name="StandardId" Nullable="false" />
+          <NavigationProperty Name="Standard" Relationship="Tabel.StudentStandard" FromRole="Student" ToRole="Standard" />
+          <NavigationProperty Name="Faculty" Relationship="Tabel.StudentFaculty" FromRole="Student" ToRole="Faculty" />
+          <NavigationProperty Name="Program" Relationship="Tabel.StudentProgram" FromRole="Student" ToRole="Program" />
+          <NavigationProperty Name="Campu" Relationship="Tabel.CampusStudent" FromRole="Student" ToRole="Campus" />
+          <Property Type="Int32" Name="CampusId" Nullable="false" />
+          <NavigationProperty Name="Car" Relationship="Tabel.StudentCar" FromRole="Student" ToRole="Car" />
+          <NavigationProperty Name="Accounts" Relationship="Tabel.StudentAccount" FromRole="Student" ToRole="Account" />
+          <NavigationProperty Name="Books" Relationship="Tabel.StudentBook" FromRole="Student" ToRole="Book" />
+        </EntityType>
+        <EntityType Name="Standard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="StandardName" Nullable="false" />
+          <Property Type="String" Name="StandardId" Nullable="false" />
+          <NavigationProperty Name="Student" Relationship="Tabel.StudentStandard" FromRole="Standard" ToRole="Student" />
+        </EntityType>
+        <Association Name="StudentStandard">
+          <End Type="Tabel.Student" Role="Student" Multiplicity="1" />
+          <End Type="Tabel.Standard" Role="Standard" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Faculty">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="SSN" Nullable="false" />
+          <Property Type="String" Name="Address" Nullable="false" />
+          <NavigationProperty Name="Students" Relationship="Tabel.StudentFaculty" FromRole="Faculty" ToRole="Student" />
+          <NavigationProperty Name="Programs" Relationship="Tabel.FacultyProgram" FromRole="Faculty" ToRole="Program" />
+          <NavigationProperty Name="Campu" Relationship="Tabel.CampusFaculty" FromRole="Faculty" ToRole="Campus" />
+          <Property Type="Int32" Name="CampusId" Nullable="false" />
+          <NavigationProperty Name="Program" Relationship="Tabel.FacultyProgram1" FromRole="Faculty" ToRole="Program" />
+          <NavigationProperty Name="Account" Relationship="Tabel.FacultyAccount" FromRole="Faculty" ToRole="Account" />
+          <NavigationProperty Name="Department" Relationship="Tabel.DepartmentFaculty" FromRole="Faculty" ToRole="Department" />
+        </EntityType>
+        <Association Name="StudentFaculty">
+          <End Type="Tabel.Student" Role="Student" Multiplicity="*" />
+          <End Type="Tabel.Faculty" Role="Faculty" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Program">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="Telephone" Nullable="false" />
+          <Property Type="String" Name="DepartmentId" Nullable="false" />
+          <NavigationProperty Name="Faculty" Relationship="Tabel.FacultyProgram" FromRole="Program" ToRole="Faculty" />
+          <Property Type="Int32" Name="FacultyId" Nullable="false" />
+          <NavigationProperty Name="Students" Relationship="Tabel.StudentProgram" FromRole="Program" ToRole="Student" />
+          <NavigationProperty Name="Campu" Relationship="Tabel.CampusProgram" FromRole="Program" ToRole="Campus" />
+          <Property Type="Int32" Name="CampusId" Nullable="false" />
+          <NavigationProperty Name="Faculty1" Relationship="Tabel.FacultyProgram1" FromRole="Program" ToRole="Faculty" />
+        </EntityType>
+        <Association Name="FacultyProgram">
+          <End Type="Tabel.Faculty" Role="Faculty" Multiplicity="1" />
+          <End Type="Tabel.Program" Role="Program" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Faculty">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Program">
+              <PropertyRef Name="FacultyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="StudentProgram">
+          <End Type="Tabel.Student" Role="Student" Multiplicity="*" />
+          <End Type="Tabel.Program" Role="Program" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Campus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="Location" Nullable="false" />
+          <Property Type="String" Name="CampusType" Nullable="false" />
+          <NavigationProperty Name="Students" Relationship="Tabel.CampusStudent" FromRole="Campus" ToRole="Student" />
+          <NavigationProperty Name="Faculties" Relationship="Tabel.CampusFaculty" FromRole="Campus" ToRole="Faculty" />
+          <NavigationProperty Name="Programs" Relationship="Tabel.CampusProgram" FromRole="Campus" ToRole="Program" />
+          <NavigationProperty Name="Departments" Relationship="Tabel.CampusDepartment" FromRole="Campus" ToRole="Department" />
+        </EntityType>
+        <Association Name="CampusStudent">
+          <End Type="Tabel.Campus" Role="Campus" Multiplicity="1" />
+          <End Type="Tabel.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="CampusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CampusFaculty">
+          <End Type="Tabel.Campus" Role="Campus" Multiplicity="1" />
+          <End Type="Tabel.Faculty" Role="Faculty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Faculty">
+              <PropertyRef Name="CampusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CampusProgram">
+          <End Type="Tabel.Campus" Role="Campus" Multiplicity="1" />
+          <End Type="Tabel.Program" Role="Program" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Program">
+              <PropertyRef Name="CampusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Car">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="VIN" Nullable="false" />
+          <Property Type="String" Name="Model" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <NavigationProperty Name="Student" Relationship="Tabel.StudentCar" FromRole="Car" ToRole="Student" />
+        </EntityType>
+        <Association Name="StudentCar">
+          <End Type="Tabel.Student" Role="Student" Multiplicity="1" />
+          <End Type="Tabel.Car" Role="Car" Multiplicity="0..1" />
+        </Association>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="AcctNum" Nullable="false" />
+          <Property Type="String" Name="Type" Nullable="false" />
+          <NavigationProperty Name="Students" Relationship="Tabel.StudentAccount" FromRole="Account" ToRole="Student" />
+          <NavigationProperty Name="Faculty" Relationship="Tabel.FacultyAccount" FromRole="Account" ToRole="Faculty" />
+          <NavigationProperty Name="Branch" Relationship="Tabel.AccountBranch" FromRole="Account" ToRole="Branch" />
+        </EntityType>
+        <Association Name="StudentAccount">
+          <End Type="Tabel.Student" Role="Student" Multiplicity="*" />
+          <End Type="Tabel.Account" Role="Account" Multiplicity="*" />
+        </Association>
+        <Association Name="FacultyProgram1">
+          <End Type="Tabel.Faculty" Role="Faculty" Multiplicity="1" />
+          <End Type="Tabel.Program" Role="Program" Multiplicity="1" />
+        </Association>
+        <Association Name="FacultyAccount">
+          <End Type="Tabel.Faculty" Role="Faculty" Multiplicity="1" />
+          <End Type="Tabel.Account" Role="Account" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Branch">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="BranchNo" Nullable="false" />
+          <NavigationProperty Name="Account" Relationship="Tabel.AccountBranch" FromRole="Branch" ToRole="Account" />
+        </EntityType>
+        <Association Name="AccountBranch">
+          <End Type="Tabel.Account" Role="Account" Multiplicity="1" />
+          <End Type="Tabel.Branch" Role="Branch" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="DepartId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <NavigationProperty Name="Campu" Relationship="Tabel.CampusDepartment" FromRole="Department" ToRole="Campus" />
+          <Property Type="Int32" Name="CampusId" Nullable="false" />
+          <NavigationProperty Name="Faculties" Relationship="Tabel.DepartmentFaculty" FromRole="Department" ToRole="Faculty" />
+          <NavigationProperty Name="Projects" Relationship="Tabel.DepartmentProject" FromRole="Department" ToRole="Project" />
+        </EntityType>
+        <Association Name="CampusDepartment">
+          <End Type="Tabel.Campus" Role="Campus" Multiplicity="1" />
+          <End Type="Tabel.Department" Role="Department" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Department">
+              <PropertyRef Name="CampusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DepartmentFaculty">
+          <End Type="Tabel.Department" Role="Department" Multiplicity="1" />
+          <End Type="Tabel.Faculty" Role="Faculty" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="Type" Nullable="false" />
+          <NavigationProperty Name="Department" Relationship="Tabel.DepartmentProject" FromRole="Project" ToRole="Department" />
+          <Property Type="Int32" Name="DepartmentId" Nullable="false" />
+        </EntityType>
+        <Association Name="DepartmentProject">
+          <End Type="Tabel.Department" Role="Department" Multiplicity="1" />
+          <End Type="Tabel.Project" Role="Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Project">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Book">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ISBN" Nullable="false" />
+          <Property Type="String" Name="Author" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="false" />
+          <NavigationProperty Name="Students" Relationship="Tabel.StudentBook" FromRole="Book" ToRole="Student" />
+        </EntityType>
+        <Association Name="StudentBook">
+          <End Type="Tabel.Student" Role="Student" Multiplicity="*" />
+          <End Type="Tabel.Book" Role="Book" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="Tabel" />
+        <Alias Key="Target" Value="Tabel.Store" />
+        <EntityContainerMapping CdmEntityContainer="TabelContainer" StorageEntityContainer="TabelTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
