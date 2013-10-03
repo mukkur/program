@@ -4,16 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d800162564a34245a3cd6ff32c50f0ed" Name="Diagram1" >
+      <Diagram DiagramId="d800162564a34245a3cd6ff32c50f0ed" Name="Diagram1" ZoomLevel="74" >
         <EntityTypeShape EntityType="Tabel.Student" Width="1.5" PointX="1.125" PointY="1.125" />
         <EntityTypeShape EntityType="Tabel.Standard" Width="1.5" PointX="3.625" PointY="1.375" />
         <AssociationConnector Association="Tabel.StudentStandard" />
-        <EntityTypeShape EntityType="Tabel.Faculty" Width="1.5" PointX="1.25" PointY="4.125" />
+        <EntityTypeShape EntityType="Tabel.Faculty" Width="1.5" PointX="1.375" PointY="4.875" />
         <AssociationConnector Association="Tabel.StudentFaculty" />
         <EntityTypeShape EntityType="Tabel.Program" Width="1.5" PointX="3.625" PointY="3.75" />
         <AssociationConnector Association="Tabel.FacultyProgram" />
         <AssociationConnector Association="Tabel.StudentProgram" />
-        <EntityTypeShape EntityType="Tabel.Campus" Width="1.5" PointX="1.5" PointY="7.25" />
+        <EntityTypeShape EntityType="Tabel.Campus" Width="1.5" PointX="1.625" PointY="8.375" />
         <AssociationConnector Association="Tabel.CampusStudent" />
         <AssociationConnector Association="Tabel.CampusFaculty" />
         <AssociationConnector Association="Tabel.CampusProgram" />
@@ -28,10 +28,11 @@
         <EntityTypeShape EntityType="Tabel.Department" Width="1.5" PointX="4" PointY="8.125" />
         <AssociationConnector Association="Tabel.CampusDepartment" />
         <AssociationConnector Association="Tabel.DepartmentFaculty" />
-        <EntityTypeShape EntityType="Tabel.Project" Width="1.5" PointX="1" PointY="10.625" />
+        <EntityTypeShape EntityType="Tabel.Project" Width="1.5" PointX="1.375" PointY="11.25" />
         <AssociationConnector Association="Tabel.DepartmentProject" />
         <EntityTypeShape EntityType="Tabel.Book" Width="1.5" PointX="4.25" PointY="12" />
         <AssociationConnector Association="Tabel.StudentBook" />
+        <EntityTypeShape EntityType="Tabel.Entity1" Width="1.5" PointX="8.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

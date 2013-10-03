@@ -23,6 +23,7 @@ namespace DataLayer
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int KeywordId { get; set; }
+        public string fbid { get; set; }
     
         public virtual Keyword Keyword { get; set; }
         public virtual ICollection<ContactMethod> ContactMethods { get; set; }
