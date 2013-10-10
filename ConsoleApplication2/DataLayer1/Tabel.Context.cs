@@ -36,5 +36,6 @@ namespace DataLayer1
         public DbSet<Department> Departments { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<Book> Books { get; set; }
+        public DbSet<Entity1> Entity1 { get; set; }
     }
 }

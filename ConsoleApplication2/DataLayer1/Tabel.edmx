@@ -88,6 +88,7 @@
             <End Role="Student" EntitySet="Students" />
             <End Role="Book" EntitySet="Books" />
           </AssociationSet>
+          <EntitySet Name="Entity1" EntityType="Tabel.Entity1" />
         </EntityContainer>
         <EntityType Name="Student">
           <Key>
@@ -334,6 +335,12 @@
           <End Type="Tabel.Student" Role="Student" Multiplicity="*" />
           <End Type="Tabel.Book" Role="Book" Multiplicity="*" />
         </Association>
+        <EntityType Name="Entity1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
