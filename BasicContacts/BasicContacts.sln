@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicContacts", "BasicConta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicContactsTests", "BasicContactsTests\BasicContactsTests.csproj", "{55FF84CF-F2CE-4791-A4A7-6C9006012890}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer2", "..\DataLayer2\DataLayer2.csproj", "{24FE2B5B-EF98-465B-82C9-88BAC9891BCD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{55FF84CF-F2CE-4791-A4A7-6C9006012890}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55FF84CF-F2CE-4791-A4A7-6C9006012890}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55FF84CF-F2CE-4791-A4A7-6C9006012890}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24FE2B5B-EF98-465B-82C9-88BAC9891BCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24FE2B5B-EF98-465B-82C9-88BAC9891BCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24FE2B5B-EF98-465B-82C9-88BAC9891BCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24FE2B5B-EF98-465B-82C9-88BAC9891BCD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
