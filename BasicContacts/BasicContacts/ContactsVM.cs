@@ -11,6 +11,9 @@ namespace BasicContacts
     {
         public ContactsVM()
         {
+           var db = new CSharpContext();
+            Contacts = db.Contacts.Local;
+            db.Contacts.Load();
             AddCommand = new DelegateCommand(
                 () => {
                     Contacts.Add(new ContactsVM { FirstName = this.FirstName });
