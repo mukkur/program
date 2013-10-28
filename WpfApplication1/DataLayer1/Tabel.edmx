@@ -1,0 +1,1002 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Tabel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="TabelStoreContainer">
+    <EntitySet Name="Students" EntityType="Tabel.Store.Students" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Standards" EntityType="Tabel.Store.Standards" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Faculties" EntityType="Tabel.Store.Faculties" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Programs" EntityType="Tabel.Store.Programs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Campus" EntityType="Tabel.Store.Campus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Cars" EntityType="Tabel.Store.Cars" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Accounts" EntityType="Tabel.Store.Accounts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Branches" EntityType="Tabel.Store.Branches" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Departments" EntityType="Tabel.Store.Departments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Projects" EntityType="Tabel.Store.Projects" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Books" EntityType="Tabel.Store.Books" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Entity1" EntityType="Tabel.Store.Entity1" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StudentAccount" EntityType="Tabel.Store.StudentAccount" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StudentBook" EntityType="Tabel.Store.StudentBook" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="StudentStandard" Association="Tabel.Store.StudentStandard">
+      <End Role="Student" EntitySet="Students" />
+      <End Role="Standard" EntitySet="Standards" />
+    </AssociationSet>
+    <AssociationSet Name="StudentFaculty" Association="Tabel.Store.StudentFaculty">
+      <End Role="Student" EntitySet="Students" />
+      <End Role="Faculty" EntitySet="Faculties" />
+    </AssociationSet>
+    <AssociationSet Name="FacultyProgram" Association="Tabel.Store.FacultyProgram">
+      <End Role="Faculty" EntitySet="Faculties" />
+      <End Role="Program" EntitySet="Programs" />
+    </AssociationSet>
+    <AssociationSet Name="StudentProgram" Association="Tabel.Store.StudentProgram">
+      <End Role="Student" EntitySet="Students" />
+      <End Role="Program" EntitySet="Programs" />
+    </AssociationSet>
+    <AssociationSet Name="CampusStudent" Association="Tabel.Store.CampusStudent">
+      <End Role="Campus" EntitySet="Campus" />
+      <End Role="Student" EntitySet="Students" />
+    </AssociationSet>
+    <AssociationSet Name="CampusFaculty" Association="Tabel.Store.CampusFaculty">
+      <End Role="Campus" EntitySet="Campus" />
+      <End Role="Faculty" EntitySet="Faculties" />
+    </AssociationSet>
+    <AssociationSet Name="CampusProgram" Association="Tabel.Store.CampusProgram">
+      <End Role="Campus" EntitySet="Campus" />
+      <End Role="Program" EntitySet="Programs" />
+    </AssociationSet>
+    <AssociationSet Name="StudentCar" Association="Tabel.Store.StudentCar">
+      <End Role="Student" EntitySet="Students" />
+      <End Role="Car" EntitySet="Cars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentAccount_Student" Association="Tabel.Store.FK_StudentAccount_Student">
+      <End Role="Student" EntitySet="Students" />
+      <End Role="StudentAccount" EntitySet="StudentAccount" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentAccount_Account" Association="Tabel.Store.FK_StudentAccount_Account">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="StudentAccount" EntitySet="StudentAccount" />
+    </AssociationSet>
+    <AssociationSet Name="FacultyProgram1" Association="Tabel.Store.FacultyProgram1">
+      <End Role="Faculty" EntitySet="Faculties" />
+      <End Role="Program" EntitySet="Programs" />
+    </AssociationSet>
+    <AssociationSet Name="FacultyAccount" Association="Tabel.Store.FacultyAccount">
+      <End Role="Faculty" EntitySet="Faculties" />
+      <End Role="Account" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="AccountBranch" Association="Tabel.Store.AccountBranch">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Branch" EntitySet="Branches" />
+    </AssociationSet>
+    <AssociationSet Name="CampusDepartment" Association="Tabel.Store.CampusDepartment">
+      <End Role="Campus" EntitySet="Campus" />
+      <End Role="Department" EntitySet="Departments" />
+    </AssociationSet>
+    <AssociationSet Name="DepartmentFaculty" Association="Tabel.Store.DepartmentFaculty">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Faculty" EntitySet="Faculties" />
+    </AssociationSet>
+    <AssociationSet Name="DepartmentProject" Association="Tabel.Store.DepartmentProject">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Project" EntitySet="Projects" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentBook_Student" Association="Tabel.Store.FK_StudentBook_Student">
+      <End Role="Student" EntitySet="Students" />
+      <End Role="StudentBook" EntitySet="StudentBook" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StudentBook_Book" Association="Tabel.Store.FK_StudentBook_Book">
+      <End Role="Book" EntitySet="Books" />
+      <End Role="StudentBook" EntitySet="StudentBook" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Students">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StandardId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CampusId" Type="int" Nullable="false" />
+    <Property Name="Standard_Id" Type="int" Nullable="false" />
+    <Property Name="Faculty_Id" Type="int" Nullable="false" />
+    <Property Name="Program_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Standards">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StandardName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="StandardId" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Faculties">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SSN" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CampusId" Type="int" Nullable="false" />
+    <Property Name="Program_Id" Type="int" Nullable="false" />
+    <Property Name="Account_Id" Type="int" Nullable="false" />
+    <Property Name="Department_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Programs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Telephone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DepartmentId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FacultyId" Type="int" Nullable="false" />
+    <Property Name="CampusId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Campus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Location" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CampusType" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cars">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VIN" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Model" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Student_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Accounts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AcctNum" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Branch_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Branches">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BranchNo" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Departments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CampusId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Projects">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DepartmentId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Books">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ISBN" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Author" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Entity1">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StudentAccount">
+    <Key>
+      <PropertyRef Name="Students_Id" />
+      <PropertyRef Name="Accounts_Id" />
+    </Key>
+    <Property Name="Students_Id" Type="int" Nullable="false" />
+    <Property Name="Accounts_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StudentBook">
+    <Key>
+      <PropertyRef Name="Students_Id" />
+      <PropertyRef Name="Books_Id" />
+    </Key>
+    <Property Name="Students_Id" Type="int" Nullable="false" />
+    <Property Name="Books_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="StudentStandard">
+    <End Role="Student" Type="Tabel.Store.Students" Multiplicity="*" />
+    <End Role="Standard" Type="Tabel.Store.Standards" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Standard">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="Standard_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="StudentFaculty">
+    <End Role="Student" Type="Tabel.Store.Students" Multiplicity="*" />
+    <End Role="Faculty" Type="Tabel.Store.Faculties" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Faculty">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="Faculty_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FacultyProgram">
+    <End Role="Faculty" Type="Tabel.Store.Faculties" Multiplicity="1" />
+    <End Role="Program" Type="Tabel.Store.Programs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Faculty">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Program">
+        <PropertyRef Name="FacultyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="StudentProgram">
+    <End Role="Student" Type="Tabel.Store.Students" Multiplicity="*" />
+    <End Role="Program" Type="Tabel.Store.Programs" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Program">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="Program_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CampusStudent">
+    <End Role="Campus" Type="Tabel.Store.Campus" Multiplicity="1" />
+    <End Role="Student" Type="Tabel.Store.Students" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Campus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Student">
+        <PropertyRef Name="CampusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CampusFaculty">
+    <End Role="Campus" Type="Tabel.Store.Campus" Multiplicity="1" />
+    <End Role="Faculty" Type="Tabel.Store.Faculties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Campus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Faculty">
+        <PropertyRef Name="CampusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CampusProgram">
+    <End Role="Campus" Type="Tabel.Store.Campus" Multiplicity="1" />
+    <End Role="Program" Type="Tabel.Store.Programs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Campus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Program">
+        <PropertyRef Name="CampusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="StudentCar">
+    <End Role="Student" Type="Tabel.Store.Students" Multiplicity="1" />
+    <End Role="Car" Type="Tabel.Store.Cars" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Car">
+        <PropertyRef Name="Student_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FacultyProgram1">
+    <End Role="Faculty" Type="Tabel.Store.Faculties" Multiplicity="*" />
+    <End Role="Program" Type="Tabel.Store.Programs" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Program">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Faculty">
+        <PropertyRef Name="Program_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FacultyAccount">
+    <End Role="Faculty" Type="Tabel.Store.Faculties" Multiplicity="*" />
+    <End Role="Account" Type="Tabel.Store.Accounts" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Faculty">
+        <PropertyRef Name="Account_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AccountBranch">
+    <End Role="Account" Type="Tabel.Store.Accounts" Multiplicity="*" />
+    <End Role="Branch" Type="Tabel.Store.Branches" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Branch">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="Branch_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CampusDepartment">
+    <End Role="Campus" Type="Tabel.Store.Campus" Multiplicity="1" />
+    <End Role="Department" Type="Tabel.Store.Departments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Campus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Department">
+        <PropertyRef Name="CampusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DepartmentFaculty">
+    <End Role="Department" Type="Tabel.Store.Departments" Multiplicity="1" />
+    <End Role="Faculty" Type="Tabel.Store.Faculties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Faculty">
+        <PropertyRef Name="Department_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DepartmentProject">
+    <End Role="Department" Type="Tabel.Store.Departments" Multiplicity="1" />
+    <End Role="Project" Type="Tabel.Store.Projects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Project">
+        <PropertyRef Name="DepartmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentAccount_Student">
+    <End Role="Student" Type="Tabel.Store.Students" Multiplicity="1" />
+    <End Role="StudentAccount" Type="Tabel.Store.StudentAccount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudentAccount">
+        <PropertyRef Name="Students_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentAccount_Account">
+    <End Role="StudentAccount" Type="Tabel.Store.StudentAccount" Multiplicity="*" />
+    <End Role="Account" Type="Tabel.Store.Accounts" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudentAccount">
+        <PropertyRef Name="Accounts_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentBook_Student">
+    <End Role="Student" Type="Tabel.Store.Students" Multiplicity="1" />
+    <End Role="StudentBook" Type="Tabel.Store.StudentBook" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudentBook">
+        <PropertyRef Name="Students_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StudentBook_Book">
+    <End Role="StudentBook" Type="Tabel.Store.StudentBook" Multiplicity="*" />
+    <End Role="Book" Type="Tabel.Store.Books" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Book">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StudentBook">
+        <PropertyRef Name="Books_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Tabel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="TabelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Students" EntityType="Tabel.Student" />
+          <EntitySet Name="Standards" EntityType="Tabel.Standard" />
+          <AssociationSet Name="StudentStandard" Association="Tabel.StudentStandard">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="Standard" EntitySet="Standards" />
+          </AssociationSet>
+          <EntitySet Name="Faculties" EntityType="Tabel.Faculty" />
+          <AssociationSet Name="StudentFaculty" Association="Tabel.StudentFaculty">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="Faculty" EntitySet="Faculties" />
+          </AssociationSet>
+          <EntitySet Name="Programs" EntityType="Tabel.Program" />
+          <AssociationSet Name="FacultyProgram" Association="Tabel.FacultyProgram">
+            <End Role="Faculty" EntitySet="Faculties" />
+            <End Role="Program" EntitySet="Programs" />
+          </AssociationSet>
+          <AssociationSet Name="StudentProgram" Association="Tabel.StudentProgram">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="Program" EntitySet="Programs" />
+          </AssociationSet>
+          <EntitySet Name="Campus" EntityType="Tabel.Campus" />
+          <AssociationSet Name="CampusStudent" Association="Tabel.CampusStudent">
+            <End Role="Campus" EntitySet="Campus" />
+            <End Role="Student" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="CampusFaculty" Association="Tabel.CampusFaculty">
+            <End Role="Campus" EntitySet="Campus" />
+            <End Role="Faculty" EntitySet="Faculties" />
+          </AssociationSet>
+          <AssociationSet Name="CampusProgram" Association="Tabel.CampusProgram">
+            <End Role="Campus" EntitySet="Campus" />
+            <End Role="Program" EntitySet="Programs" />
+          </AssociationSet>
+          <EntitySet Name="Cars" EntityType="Tabel.Car" />
+          <AssociationSet Name="StudentCar" Association="Tabel.StudentCar">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="Car" EntitySet="Cars" />
+          </AssociationSet>
+          <EntitySet Name="Accounts" EntityType="Tabel.Account" />
+          <AssociationSet Name="StudentAccount" Association="Tabel.StudentAccount">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FacultyProgram1" Association="Tabel.FacultyProgram1">
+            <End Role="Faculty" EntitySet="Faculties" />
+            <End Role="Program" EntitySet="Programs" />
+          </AssociationSet>
+          <AssociationSet Name="FacultyAccount" Association="Tabel.FacultyAccount">
+            <End Role="Faculty" EntitySet="Faculties" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <EntitySet Name="Branches" EntityType="Tabel.Branch" />
+          <AssociationSet Name="AccountBranch" Association="Tabel.AccountBranch">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Branch" EntitySet="Branches" />
+          </AssociationSet>
+          <EntitySet Name="Departments" EntityType="Tabel.Department" />
+          <AssociationSet Name="CampusDepartment" Association="Tabel.CampusDepartment">
+            <End Role="Campus" EntitySet="Campus" />
+            <End Role="Department" EntitySet="Departments" />
+          </AssociationSet>
+          <AssociationSet Name="DepartmentFaculty" Association="Tabel.DepartmentFaculty">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Faculty" EntitySet="Faculties" />
+          </AssociationSet>
+          <EntitySet Name="Projects" EntityType="Tabel.Project" />
+          <AssociationSet Name="DepartmentProject" Association="Tabel.DepartmentProject">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="Project" EntitySet="Projects" />
+          </AssociationSet>
+          <EntitySet Name="Books" EntityType="Tabel.Book" />
+          <AssociationSet Name="StudentBook" Association="Tabel.StudentBook">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="Book" EntitySet="Books" />
+          </AssociationSet>
+          <EntitySet Name="Entity1" EntityType="Tabel.Entity1" />
+        </EntityContainer>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="FName" Nullable="false" />
+          <Property Type="String" Name="LName" Nullable="false" />
+          <Property Type="String" Name="StandardId" Nullable="false" />
+          <NavigationProperty Name="Standard" Relationship="Tabel.StudentStandard" FromRole="Student" ToRole="Standard" />
+          <NavigationProperty Name="Faculty" Relationship="Tabel.StudentFaculty" FromRole="Student" ToRole="Faculty" />
+          <NavigationProperty Name="Program" Relationship="Tabel.StudentProgram" FromRole="Student" ToRole="Program" />
+          <NavigationProperty Name="Campu" Relationship="Tabel.CampusStudent" FromRole="Student" ToRole="Campus" />
+          <Property Type="Int32" Name="CampusId" Nullable="false" />
+          <NavigationProperty Name="Car" Relationship="Tabel.StudentCar" FromRole="Student" ToRole="Car" />
+          <NavigationProperty Name="Accounts" Relationship="Tabel.StudentAccount" FromRole="Student" ToRole="Account" />
+          <NavigationProperty Name="Books" Relationship="Tabel.StudentBook" FromRole="Student" ToRole="Book" />
+        </EntityType>
+        <EntityType Name="Standard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="StandardName" Nullable="false" />
+          <Property Type="String" Name="StandardId" Nullable="false" />
+          <NavigationProperty Name="Student" Relationship="Tabel.StudentStandard" FromRole="Standard" ToRole="Student" />
+        </EntityType>
+        <Association Name="StudentStandard">
+          <End Type="Tabel.Student" Role="Student" Multiplicity="1" />
+          <End Type="Tabel.Standard" Role="Standard" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Faculty">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="SSN" Nullable="false" />
+          <Property Type="String" Name="Address" Nullable="false" />
+          <NavigationProperty Name="Students" Relationship="Tabel.StudentFaculty" FromRole="Faculty" ToRole="Student" />
+          <NavigationProperty Name="Programs" Relationship="Tabel.FacultyProgram" FromRole="Faculty" ToRole="Program" />
+          <NavigationProperty Name="Campu" Relationship="Tabel.CampusFaculty" FromRole="Faculty" ToRole="Campus" />
+          <Property Type="Int32" Name="CampusId" Nullable="false" />
+          <NavigationProperty Name="Program" Relationship="Tabel.FacultyProgram1" FromRole="Faculty" ToRole="Program" />
+          <NavigationProperty Name="Account" Relationship="Tabel.FacultyAccount" FromRole="Faculty" ToRole="Account" />
+          <NavigationProperty Name="Department" Relationship="Tabel.DepartmentFaculty" FromRole="Faculty" ToRole="Department" />
+        </EntityType>
+        <Association Name="StudentFaculty">
+          <End Type="Tabel.Student" Role="Student" Multiplicity="*" />
+          <End Type="Tabel.Faculty" Role="Faculty" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Program">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="Telephone" Nullable="false" />
+          <Property Type="String" Name="DepartmentId" Nullable="false" />
+          <NavigationProperty Name="Faculty" Relationship="Tabel.FacultyProgram" FromRole="Program" ToRole="Faculty" />
+          <Property Type="Int32" Name="FacultyId" Nullable="false" />
+          <NavigationProperty Name="Students" Relationship="Tabel.StudentProgram" FromRole="Program" ToRole="Student" />
+          <NavigationProperty Name="Campu" Relationship="Tabel.CampusProgram" FromRole="Program" ToRole="Campus" />
+          <Property Type="Int32" Name="CampusId" Nullable="false" />
+          <NavigationProperty Name="Faculty1" Relationship="Tabel.FacultyProgram1" FromRole="Program" ToRole="Faculty" />
+        </EntityType>
+        <Association Name="FacultyProgram">
+          <End Type="Tabel.Faculty" Role="Faculty" Multiplicity="1" />
+          <End Type="Tabel.Program" Role="Program" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Faculty">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Program">
+              <PropertyRef Name="FacultyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="StudentProgram">
+          <End Type="Tabel.Student" Role="Student" Multiplicity="*" />
+          <End Type="Tabel.Program" Role="Program" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Campus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="Location" Nullable="false" />
+          <Property Type="String" Name="CampusType" Nullable="false" />
+          <NavigationProperty Name="Students" Relationship="Tabel.CampusStudent" FromRole="Campus" ToRole="Student" />
+          <NavigationProperty Name="Faculties" Relationship="Tabel.CampusFaculty" FromRole="Campus" ToRole="Faculty" />
+          <NavigationProperty Name="Programs" Relationship="Tabel.CampusProgram" FromRole="Campus" ToRole="Program" />
+          <NavigationProperty Name="Departments" Relationship="Tabel.CampusDepartment" FromRole="Campus" ToRole="Department" />
+        </EntityType>
+        <Association Name="CampusStudent">
+          <End Type="Tabel.Campus" Role="Campus" Multiplicity="1" />
+          <End Type="Tabel.Student" Role="Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Student">
+              <PropertyRef Name="CampusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CampusFaculty">
+          <End Type="Tabel.Campus" Role="Campus" Multiplicity="1" />
+          <End Type="Tabel.Faculty" Role="Faculty" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Faculty">
+              <PropertyRef Name="CampusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CampusProgram">
+          <End Type="Tabel.Campus" Role="Campus" Multiplicity="1" />
+          <End Type="Tabel.Program" Role="Program" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Program">
+              <PropertyRef Name="CampusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Car">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="VIN" Nullable="false" />
+          <Property Type="String" Name="Model" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <NavigationProperty Name="Student" Relationship="Tabel.StudentCar" FromRole="Car" ToRole="Student" />
+        </EntityType>
+        <Association Name="StudentCar">
+          <End Type="Tabel.Student" Role="Student" Multiplicity="1" />
+          <End Type="Tabel.Car" Role="Car" Multiplicity="0..1" />
+        </Association>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="AcctNum" Nullable="false" />
+          <Property Type="String" Name="Type" Nullable="false" />
+          <NavigationProperty Name="Students" Relationship="Tabel.StudentAccount" FromRole="Account" ToRole="Student" />
+          <NavigationProperty Name="Faculty" Relationship="Tabel.FacultyAccount" FromRole="Account" ToRole="Faculty" />
+          <NavigationProperty Name="Branch" Relationship="Tabel.AccountBranch" FromRole="Account" ToRole="Branch" />
+        </EntityType>
+        <Association Name="StudentAccount">
+          <End Type="Tabel.Student" Role="Student" Multiplicity="*" />
+          <End Type="Tabel.Account" Role="Account" Multiplicity="*" />
+        </Association>
+        <Association Name="FacultyProgram1">
+          <End Type="Tabel.Faculty" Role="Faculty" Multiplicity="1" />
+          <End Type="Tabel.Program" Role="Program" Multiplicity="1" />
+        </Association>
+        <Association Name="FacultyAccount">
+          <End Type="Tabel.Faculty" Role="Faculty" Multiplicity="1" />
+          <End Type="Tabel.Account" Role="Account" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Branch">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="BranchNo" Nullable="false" />
+          <NavigationProperty Name="Account" Relationship="Tabel.AccountBranch" FromRole="Branch" ToRole="Account" />
+        </EntityType>
+        <Association Name="AccountBranch">
+          <End Type="Tabel.Account" Role="Account" Multiplicity="1" />
+          <End Type="Tabel.Branch" Role="Branch" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="DepartId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <NavigationProperty Name="Campu" Relationship="Tabel.CampusDepartment" FromRole="Department" ToRole="Campus" />
+          <Property Type="Int32" Name="CampusId" Nullable="false" />
+          <NavigationProperty Name="Faculties" Relationship="Tabel.DepartmentFaculty" FromRole="Department" ToRole="Faculty" />
+          <NavigationProperty Name="Projects" Relationship="Tabel.DepartmentProject" FromRole="Department" ToRole="Project" />
+        </EntityType>
+        <Association Name="CampusDepartment">
+          <End Type="Tabel.Campus" Role="Campus" Multiplicity="1" />
+          <End Type="Tabel.Department" Role="Department" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Department">
+              <PropertyRef Name="CampusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DepartmentFaculty">
+          <End Type="Tabel.Department" Role="Department" Multiplicity="1" />
+          <End Type="Tabel.Faculty" Role="Faculty" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="Type" Nullable="false" />
+          <NavigationProperty Name="Department" Relationship="Tabel.DepartmentProject" FromRole="Project" ToRole="Department" />
+          <Property Type="Int32" Name="DepartmentId" Nullable="false" />
+        </EntityType>
+        <Association Name="DepartmentProject">
+          <End Type="Tabel.Department" Role="Department" Multiplicity="1" />
+          <End Type="Tabel.Project" Role="Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Project">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Book">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ISBN" Nullable="false" />
+          <Property Type="String" Name="Author" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="false" />
+          <NavigationProperty Name="Students" Relationship="Tabel.StudentBook" FromRole="Book" ToRole="Student" />
+        </EntityType>
+        <Association Name="StudentBook">
+          <End Type="Tabel.Student" Role="Student" Multiplicity="*" />
+          <End Type="Tabel.Book" Role="Book" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Entity1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TabelStoreContainer" CdmEntityContainer="TabelContainer">
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="IsTypeOf(Tabel.Student)">
+        <MappingFragment StoreEntitySet="Students">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="LName" ColumnName="LName" />
+          <ScalarProperty Name="StandardId" ColumnName="StandardId" />
+          <ScalarProperty Name="CampusId" ColumnName="CampusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Standards">
+      <EntityTypeMapping TypeName="IsTypeOf(Tabel.Standard)">
+        <MappingFragment StoreEntitySet="Standards">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StandardName" ColumnName="StandardName" />
+          <ScalarProperty Name="StandardId" ColumnName="StandardId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Faculties">
+      <EntityTypeMapping TypeName="IsTypeOf(Tabel.Faculty)">
+        <MappingFragment StoreEntitySet="Faculties">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SSN" ColumnName="SSN" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CampusId" ColumnName="CampusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Programs">
+      <EntityTypeMapping TypeName="IsTypeOf(Tabel.Program)">
+        <MappingFragment StoreEntitySet="Programs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+          <ScalarProperty Name="FacultyId" ColumnName="FacultyId" />
+          <ScalarProperty Name="CampusId" ColumnName="CampusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Campus">
+      <EntityTypeMapping TypeName="IsTypeOf(Tabel.Campus)">
+        <MappingFragment StoreEntitySet="Campus">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="CampusType" ColumnName="CampusType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cars">
+      <EntityTypeMapping TypeName="IsTypeOf(Tabel.Car)">
+        <MappingFragment StoreEntitySet="Cars">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="VIN" ColumnName="VIN" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="IsTypeOf(Tabel.Account)">
+        <MappingFragment StoreEntitySet="Accounts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="AcctNum" ColumnName="AcctNum" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Branches">
+      <EntityTypeMapping TypeName="IsTypeOf(Tabel.Branch)">
+        <MappingFragment StoreEntitySet="Branches">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="BranchNo" ColumnName="BranchNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="IsTypeOf(Tabel.Department)">
+        <MappingFragment StoreEntitySet="Departments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DepartId" ColumnName="DepartId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CampusId" ColumnName="CampusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="IsTypeOf(Tabel.Project)">
+        <MappingFragment StoreEntitySet="Projects">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Books">
+      <EntityTypeMapping TypeName="IsTypeOf(Tabel.Book)">
+        <MappingFragment StoreEntitySet="Books">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Entity1">
+      <EntityTypeMapping TypeName="IsTypeOf(Tabel.Entity1)">
+        <MappingFragment StoreEntitySet="Entity1">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="StudentStandard" TypeName="Tabel.StudentStandard" StoreEntitySet="Students">
+      <EndProperty Name="Standard">
+        <ScalarProperty Name="Id" ColumnName="Standard_Id" />
+      </EndProperty>
+      <EndProperty Name="Student">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="StudentFaculty" TypeName="Tabel.StudentFaculty" StoreEntitySet="Students">
+      <EndProperty Name="Faculty">
+        <ScalarProperty Name="Id" ColumnName="Faculty_Id" />
+      </EndProperty>
+      <EndProperty Name="Student">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="StudentProgram" TypeName="Tabel.StudentProgram" StoreEntitySet="Students">
+      <EndProperty Name="Program">
+        <ScalarProperty Name="Id" ColumnName="Program_Id" />
+      </EndProperty>
+      <EndProperty Name="Student">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="StudentCar" TypeName="Tabel.StudentCar" StoreEntitySet="Cars">
+      <EndProperty Name="Student">
+        <ScalarProperty Name="Id" ColumnName="Student_Id" />
+      </EndProperty>
+      <EndProperty Name="Car">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="StudentAccount" TypeName="Tabel.StudentAccount" StoreEntitySet="StudentAccount">
+      <EndProperty Name="Student">
+        <ScalarProperty Name="Id" ColumnName="Students_Id" />
+      </EndProperty>
+      <EndProperty Name="Account">
+        <ScalarProperty Name="Id" ColumnName="Accounts_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FacultyProgram1" TypeName="Tabel.FacultyProgram1" StoreEntitySet="Faculties">
+      <EndProperty Name="Program">
+        <ScalarProperty Name="Id" ColumnName="Program_Id" />
+      </EndProperty>
+      <EndProperty Name="Faculty">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FacultyAccount" TypeName="Tabel.FacultyAccount" StoreEntitySet="Faculties">
+      <EndProperty Name="Account">
+        <ScalarProperty Name="Id" ColumnName="Account_Id" />
+      </EndProperty>
+      <EndProperty Name="Faculty">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AccountBranch" TypeName="Tabel.AccountBranch" StoreEntitySet="Accounts">
+      <EndProperty Name="Branch">
+        <ScalarProperty Name="Id" ColumnName="Branch_Id" />
+      </EndProperty>
+      <EndProperty Name="Account">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DepartmentFaculty" TypeName="Tabel.DepartmentFaculty" StoreEntitySet="Faculties">
+      <EndProperty Name="Department">
+        <ScalarProperty Name="Id" ColumnName="Department_Id" />
+      </EndProperty>
+      <EndProperty Name="Faculty">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="StudentBook" TypeName="Tabel.StudentBook" StoreEntitySet="StudentBook">
+      <EndProperty Name="Student">
+        <ScalarProperty Name="Id" ColumnName="Students_Id" />
+      </EndProperty>
+      <EndProperty Name="Book">
+        <ScalarProperty Name="Id" ColumnName="Books_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
