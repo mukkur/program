@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations.cs" />
     <Compile Include="Contact.cs">
       <DependentUpon>ContactModel.tt</DependentUpon>
     </Compile>
