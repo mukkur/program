@@ -8,10 +8,11 @@
                 
         </DataGrid>
 
-        <DataGrid HorizontalAlignment="Left" Margin="164,223,0,0" VerticalAlignment="Top"
+        <DataGrid HorizontalAlignment="Left" Margin="329,213,0,0" VerticalAlignment="Top"
                   ItemsSource="{Binding MyCampus}"></DataGrid>
-        <DataGrid HorizontalAlignment="Left" Margin="164,223,0,0" VerticalAlignment="Top"
-                  ItemsSource="{Binding MyCars}"></DataGrid>
-       
+        <DataGrid HorizontalAlignment="Left" Margin="109,347,0,0" VerticalAlignment="Top"
+                  ItemsSource="{Binding MyBranches}"></DataGrid>
+        <DataGrid HorizontalAlignment="Left" Margin="522,313,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>

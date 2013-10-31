@@ -9,6 +9,7 @@ namespace BasicContacts
 {
     class ContactsVM: BaseVM
     {
+        CSharpContext_DB;
         public ContactsVM()
         {
            var db = new CSharpContext();
@@ -22,7 +23,7 @@ namespace BasicContacts
             () => !String.IsNullOrWhiteSpace(FirstName)
                 );
             var db = new CSharpContext();
-            Contacts = db.Contacts.Loca;
+            Contacts = db.Contacts.Local;
             db.
         }
         private String _FirstName;

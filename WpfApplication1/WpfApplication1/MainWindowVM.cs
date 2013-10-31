@@ -34,14 +34,14 @@ namespace WpfApplication1
                 OnPropertyChanged("MyCampus");
             }
         }
-        private ObservableCollection<Cars> myCars;
-        public ObservableCollection<Cars> MyCars
+        private ObservableCollection<Branch> myBranches;
+        public ObservableCollection<Branch> MyBranches
         {
-            get { return myCars; }
+            get { return myBranches; }
             set
             {
-                myCars = value;
-                OnPropertyChanged("MyCars");
+                myBranches = value;
+                OnPropertyChanged("MyBranches");
             }
         }
         //Constructor
@@ -66,11 +66,11 @@ namespace WpfApplication1
                 }
 
                 var db3 = new TabelContainer();
-                this.MyCars = new ObservableCollection<Cars>();
-                var car = db3.Cars;
-                foreach (var car in cars)
+                this.MyBranches = new ObservableCollection<Branch>();
+                var branches = db3.Branches;
+                foreach (var branch in branches)
                 {
-                    this.MyCars.Add(car);
+                    this.MyBranches.Add(branch);
                 }
 
 
@@ -92,8 +92,8 @@ namespace WpfApplication1
             }
         }
 
+
     }
-        
     }
 
 
