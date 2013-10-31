@@ -44,6 +44,24 @@ namespace WpfApplication1
                 OnPropertyChanged("MyBranches");
             }
         }
+        private ObservableCollection<Dept> myDepartments;
+        public ObservableCollection<Dept> MyDepartments
+        {
+            get { return myDepartments; }
+            set
+            {
+                myDepartments = value;
+                OnPropertyChanged("MyDepartments");
+            }
+        }
+        private string BookCount;
+
+        public string MyBookCount
+        {
+            get { return BookCount; }
+            set { BookCount = value; }
+        }
+        
         //Constructor
         public MainWindowVM()
         {
@@ -60,6 +78,10 @@ namespace WpfApplication1
                 var db2 = new TabelContainer();
                 this.MyCampus = new ObservableCollection<Campus>();
                 var campus = db2.Campus;
+
+                int i = campus.Count();
+                this.MyBookCount = i.ToString();
+
                 foreach (var camp in campus)
                 {
                     this.MyCampus.Add(camp);
@@ -72,13 +94,19 @@ namespace WpfApplication1
                 {
                     this.MyBranches.Add(branch);
                 }
-
+                var db4 = new TabelContainer();
+                this.MyDepartments = new ObservableCollection<Dept>();
+                var departments = db3.Departments.Select(x => new Dept{CampusId = x.CampusId, Name = x.Name, DepartId = x.DepartId});
+                foreach (var department in departments)
+                {
+                    this.MyDepartments.Add(department);
+                }
 
 
                 //MyBook = db.Books.Local;
                 //var books = MyBook.ToList();
 
-
+               
                 var books = db.Books;
                 foreach (var book in books)
                 {

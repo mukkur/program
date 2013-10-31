@@ -24,7 +24,7 @@ namespace DataLayer1
         public string DepartId { get; set; }
         public string Name { get; set; }
         public int CampusId { get; set; }
-    
+
         public virtual Campus Campu { get; set; }
         public virtual ICollection<Faculty> Faculties { get; set; }
         public virtual ICollection<Project> Projects { get; set; }

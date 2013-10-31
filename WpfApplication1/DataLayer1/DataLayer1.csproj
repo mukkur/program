@@ -66,6 +66,7 @@
     <Compile Include="Department.cs">
       <DependentUpon>Tabel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Dept.cs" />
     <Compile Include="Entity1.cs">
       <DependentUpon>Tabel.tt</DependentUpon>
     </Compile>
