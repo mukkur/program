@@ -12,7 +12,7 @@ using System.Windows;
 
 namespace WpfApplication1
 {
-   public class MainWindowVM:BaseVM
+    public class MainWindowVM : BaseVM
     {
         private ObservableCollection<Book> myBook;
         public ObservableCollection<Book> MyBook
@@ -24,29 +24,114 @@ namespace WpfApplication1
                 OnPropertyChanged("MyBook");
             }
         }
+        private ObservableCollection<Campus> myCampus;
+        public ObservableCollection<Campus> MyCampus
+        {
+            get { return myCampus; }
+            set
+            {
+                myCampus = value;
+                OnPropertyChanged("MyCampus");
+            }
+        }
+        private ObservableCollection<Cars> myCars;
+        public ObservableCollection<Cars> MyCars
+        {
+            get { return myCars; }
+            set
+            {
+                myCars = value;
+                OnPropertyChanged("MyCars");
+            }
+        }
+        //Constructor
+        public MainWindowVM()
+        {
+            GetData();
+        }
 
-       //Constructor
-       public MainWindowVM()
+        public void GetData()
+        {
+            try
+            {
+
+                var db = new TabelContainer();
+                this.MyBook = new ObservableCollection<Book>();
+                var db2 = new TabelContainer();
+                this.MyCampus = new ObservableCollection<Campus>();
+                var campus = db2.Campus;
+                foreach (var camp in campus)
+                {
+                    this.MyCampus.Add(camp);
+                }
+
+                var db3 = new TabelContainer();
+                this.MyCars = new ObservableCollection<Cars>();
+                var car = db3.Cars;
+                foreach (var car in cars)
+                {
+                    this.MyCars.Add(car);
+                }
+
+
+
+                //MyBook = db.Books.Local;
+                //var books = MyBook.ToList();
+
+
+                var books = db.Books;
+                foreach (var book in books)
+                {
+                    this.MyBook.Add(book);
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.StackTrace.ToString());
+            }
+        }
+
+    }
+        
+    }
+
+
+   /* public class CampusesVM : BaseVM
+   {
+       private ObservableCollection<Campus> myCampus;
+       public ObservableCollection<Campus> MyCampus
        {
-           GetData();        
+           get { return myCampus; }
+           set
+           {
+               myCampus = value;
+               OnPropertyChanged("MyCampus");
+           }
        }
 
-       public void GetData()
+       //Constructor
+       public CampusesVM()
+       {
+           OnData();
+       }
+
+       public void OnData()
        {
            try
            {
 
                var db = new TabelContainer();
-               this.MyBook = new ObservableCollection<Book>();
+               this.MyCampus = new ObservableCollection<Campus>();
 
                //MyBook = db.Books.Local;
                //var books = MyBook.ToList();
 
 
-               var books = db.Books;
-               foreach (var book in books)
+               var campus = db.Campus;
+               foreach (var camp in campus)
                {
-                   this.MyBook.Add(book);
+                   this.MyCampus.Add(camp);
                }
            }
            catch (Exception ex)
@@ -55,16 +140,49 @@ namespace WpfApplication1
            }
        }
 
-    }
-}
+   }
+}*/
+/* public class CampusesVM : BaseVM
+   {
+       private ObservableCollection<Cars> myCars;
+       public ObservableCollection<Cars> MyCars
+       {
+           get { return myCars; }
+           set
+           {
+               myCampus = value;
+               OnPropertyChanged("MyCars");
+           }
+       }
 
-public class BaseVM : INotifyPropertyChanged
-{
-    public event PropertyChangedEventHandler PropertyChanged;
+       //Constructor
+       public CampusesVM()
+       {
+           OnData();
+       }
 
-    public void OnPropertyChanged([CallerMemberName]string propertyName = null)
-    {
-        if (PropertyChanged != null)
-            PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-    }
-}
+       public void OnData()
+       {
+           try
+           {
+
+               var db3 = new TabelContainer();
+               this.MyCars = new ObservableCollection<Cars>();
+
+               //MyBook = db.Books.Local;
+               //var books = MyBook.ToList();
+
+
+               var car = db3.Cars;
+               foreach (var car in cars)
+               {
+                   this.MyCars.Add(car);
+               }
+           }
+           catch (Exception ex)
+           {
+               MessageBox.Show(ex.StackTrace.ToString());
+           }
+       }
+*/
+
