@@ -14,7 +14,7 @@
                   ItemsSource="{Binding MyBranches}"></DataGrid>
         <DataGrid HorizontalAlignment="Left" Margin="522,313,0,0" VerticalAlignment="Top"
                   ItemsSource="{Binding MyDepartments}"></DataGrid>
-        <Label Content="{Binding MyBookCount}" HorizontalAlignment="Left" Margin="22,0,0,0" VerticalAlignment="Top" Width="238" Height="36"
+        <Label Content="{Binding MyBookCount}" HorizontalAlignment="Left" Margin="22,0,0,0" Name="count" VerticalAlignment="Top" Width="238" Height="36"
                />
 
     </Grid>
