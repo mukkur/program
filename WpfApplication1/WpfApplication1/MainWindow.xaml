@@ -8,14 +8,16 @@
                 
         </DataGrid>
 
-        <DataGrid HorizontalAlignment="Left" Margin="329,213,0,0" VerticalAlignment="Top"
-                  ItemsSource="{Binding MyCampus}"></DataGrid>
-        <DataGrid HorizontalAlignment="Left" Margin="109,347,0,0" VerticalAlignment="Top"
+        <DataGrid HorizontalAlignment="Left" Margin="309,213,0,0" VerticalAlignment="Top"
+                  ItemsSource="{Binding MyCampus}" RenderTransformOrigin="0.417,1.923"></DataGrid>
+        <DataGrid HorizontalAlignment="Left" Margin="96,282,0,0" VerticalAlignment="Top"
                   ItemsSource="{Binding MyBranches}"></DataGrid>
-        <DataGrid HorizontalAlignment="Left" Margin="522,313,0,0" VerticalAlignment="Top"
-                  ItemsSource="{Binding MyDepartments}"></DataGrid>
+        <DataGrid HorizontalAlignment="Left" Margin="502,318,0,0" VerticalAlignment="Top"
+                  ItemsSource="{Binding MyDepartments}" RenderTransformOrigin="-6.667,5.923"></DataGrid>
         <Label Content="{Binding MyBookCount}" HorizontalAlignment="Left" Margin="22,0,0,0" Name="count" VerticalAlignment="Top" Width="238" Height="36"
-               />
+              />
+        <Label Content="{Binding MyBranchCount}" HorizontalAlignment="Left" Margin="396,213,0,0" VerticalAlignment="Top" Width="59"/>
+
 
     </Grid>
 </Window>

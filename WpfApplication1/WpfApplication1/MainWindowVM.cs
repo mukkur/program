@@ -61,7 +61,13 @@ namespace WpfApplication1
             get { return BookCount; }
             set { BookCount = value; }
         }
-        
+        private string BranchCount;
+
+        public string MyBranchCount
+        {
+            get { return BranchCount; }
+            set { BranchCount = value; }
+        }
         //Constructor
         public MainWindowVM()
         {
@@ -90,6 +96,8 @@ namespace WpfApplication1
                 var db3 = new TabelContainer();
                 this.MyBranches = new ObservableCollection<Branch>();
                 var branches = db3.Branches;
+                int j = branches.Count();
+                this.MyBranchCount = j.ToString();
                 foreach (var branch in branches)
                 {
                     this.MyBranches.Add(branch);
