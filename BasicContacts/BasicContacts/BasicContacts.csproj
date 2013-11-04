@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{86C1E5FF-E2AD-4CC1-98F7-DE63AD0BD1EC}</ProjectGuid>
+    <ProjectGuid>{44C2B3C9-F33C-43CB-925D-E1CEF307221C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BasicContacts</RootNamespace>
@@ -34,15 +34,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
+    <Reference Include="Accessibility" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationUI, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="ReachFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Printing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -51,6 +57,8 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -61,11 +69,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ContactsVM.cs" />
-    <Compile Include="ContactsVM1.cs" />
     <Compile Include="ContactsWindow.xaml.cs">
       <DependentUpon>ContactsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="observableCollection.cs" />
+    <Compile Include="TodoItem.cs" />
     <Compile Include="TodoVM.cs" />
     <Page Include="ContactsWindow.xaml">
       <SubType>Designer</SubType>
@@ -103,8 +110,12 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\BasicContacts.Properties.Resources.datasource" />
-    <None Include="Properties\DataSources\BasicContacts.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\ContactsVM.datasource" />
+    <None Include="Properties\DataSources\DataLayer.Models.Address.datasource" />
+    <None Include="Properties\DataSources\DataLayer.Models.Contact.datasource" />
+    <None Include="Properties\DataSources\DataLayer.Models.ContactMethod.datasource" />
+    <None Include="Properties\DataSources\DataLayer.Models.CSharpContext.datasource" />
+    <None Include="Properties\DataSources\DataLayer.Models.Keyword.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

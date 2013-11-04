@@ -26,5 +26,20 @@ namespace WpfApplication1
             InitializeComponent();
             DataContext = new MainWindowVM();
         }
+
+        private void DataGrid_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void DataGrid_SelectionChanged_2(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void DataGrid_SelectionChanged_3(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

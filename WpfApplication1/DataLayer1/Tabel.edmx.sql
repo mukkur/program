@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 10/28/2013 18:34:16
+-- Date Created: 11/04/2013 14:44:03
 -- Generated from EDMX file: C:\Users\haritha\Documents\GitHub\program\WpfApplication1\DataLayer1\Tabel.edmx
 -- --------------------------------------------------
 
@@ -17,11 +17,107 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_StudentStandard]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Students] DROP CONSTRAINT [FK_StudentStandard];
+GO
+IF OBJECT_ID(N'[dbo].[FK_StudentFaculty]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Students] DROP CONSTRAINT [FK_StudentFaculty];
+GO
+IF OBJECT_ID(N'[dbo].[FK_FacultyProgram]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Programs] DROP CONSTRAINT [FK_FacultyProgram];
+GO
+IF OBJECT_ID(N'[dbo].[FK_StudentProgram]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Students] DROP CONSTRAINT [FK_StudentProgram];
+GO
+IF OBJECT_ID(N'[dbo].[FK_CampusStudent]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Students] DROP CONSTRAINT [FK_CampusStudent];
+GO
+IF OBJECT_ID(N'[dbo].[FK_CampusFaculty]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Faculties] DROP CONSTRAINT [FK_CampusFaculty];
+GO
+IF OBJECT_ID(N'[dbo].[FK_CampusProgram]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Programs] DROP CONSTRAINT [FK_CampusProgram];
+GO
+IF OBJECT_ID(N'[dbo].[FK_StudentCar]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Cars] DROP CONSTRAINT [FK_StudentCar];
+GO
+IF OBJECT_ID(N'[dbo].[FK_StudentAccount_Student]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[StudentAccount] DROP CONSTRAINT [FK_StudentAccount_Student];
+GO
+IF OBJECT_ID(N'[dbo].[FK_StudentAccount_Account]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[StudentAccount] DROP CONSTRAINT [FK_StudentAccount_Account];
+GO
+IF OBJECT_ID(N'[dbo].[FK_FacultyProgram1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Faculties] DROP CONSTRAINT [FK_FacultyProgram1];
+GO
+IF OBJECT_ID(N'[dbo].[FK_FacultyAccount]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Faculties] DROP CONSTRAINT [FK_FacultyAccount];
+GO
+IF OBJECT_ID(N'[dbo].[FK_AccountBranch]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Accounts] DROP CONSTRAINT [FK_AccountBranch];
+GO
+IF OBJECT_ID(N'[dbo].[FK_CampusDepartment]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Departments] DROP CONSTRAINT [FK_CampusDepartment];
+GO
+IF OBJECT_ID(N'[dbo].[FK_DepartmentFaculty]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Faculties] DROP CONSTRAINT [FK_DepartmentFaculty];
+GO
+IF OBJECT_ID(N'[dbo].[FK_DepartmentProject]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Projects] DROP CONSTRAINT [FK_DepartmentProject];
+GO
+IF OBJECT_ID(N'[dbo].[FK_StudentBook_Student]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[StudentBook] DROP CONSTRAINT [FK_StudentBook_Student];
+GO
+IF OBJECT_ID(N'[dbo].[FK_StudentBook_Book]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[StudentBook] DROP CONSTRAINT [FK_StudentBook_Book];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[Students]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Students];
+GO
+IF OBJECT_ID(N'[dbo].[Standards]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Standards];
+GO
+IF OBJECT_ID(N'[dbo].[Faculties]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Faculties];
+GO
+IF OBJECT_ID(N'[dbo].[Programs]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Programs];
+GO
+IF OBJECT_ID(N'[dbo].[Campus]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Campus];
+GO
+IF OBJECT_ID(N'[dbo].[Cars]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Cars];
+GO
+IF OBJECT_ID(N'[dbo].[Accounts]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Accounts];
+GO
+IF OBJECT_ID(N'[dbo].[Branches]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Branches];
+GO
+IF OBJECT_ID(N'[dbo].[Departments]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Departments];
+GO
+IF OBJECT_ID(N'[dbo].[Projects]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Projects];
+GO
+IF OBJECT_ID(N'[dbo].[Books]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Books];
+GO
+IF OBJECT_ID(N'[dbo].[Entity1]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Entity1];
+GO
+IF OBJECT_ID(N'[dbo].[StudentAccount]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[StudentAccount];
+GO
+IF OBJECT_ID(N'[dbo].[StudentBook]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[StudentBook];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables

@@ -86,7 +86,7 @@ namespace WpfApplication1
                 var campus = db2.Campus;
 
                 int i = campus.Count();
-                this.MyBookCount = i.ToString();
+                this.MyBookCount = "Campus Count = " + i.ToString();
 
                 foreach (var camp in campus)
                 {

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{55FF84CF-F2CE-4791-A4A7-6C9006012890}</ProjectGuid>
+    <ProjectGuid>{B0B660B8-DF52-4DE3-A870-E8E14B544618}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BasicContactsTests</RootNamespace>
@@ -55,7 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BasicContacts\BasicContacts.csproj">
-      <Project>{86c1e5ff-e2ad-4cc1-98f7-de63ad0bd1ec}</Project>
+      <Project>{44c2b3c9-f33c-43cb-925d-e1cef307221c}</Project>
       <Name>BasicContacts</Name>
     </ProjectReference>
   </ItemGroup>
