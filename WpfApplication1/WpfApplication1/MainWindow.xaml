@@ -25,10 +25,10 @@
                   ItemsSource="{Binding MyDepartments}" RenderTransformOrigin="-6.667,5.923" Width="238" SelectionChanged="DataGrid_SelectionChanged_2"/>
         <Label Content="{Binding MyBookCount}" HorizontalAlignment="Left" Margin="22,10,0,0" Name="count" VerticalAlignment="Top" Width="238" Height="39" RenderTransformOrigin="0.25,1.867"
               />
-        <Label Content="{Binding MyBranchCount}" HorizontalAlignment="Left" Margin="40,384,0,0" VerticalAlignment="Top" Width="226" Height="15" />
+        <Label Content="{Binding MyBranchCount}" HorizontalAlignment="Left" Margin="22,375,0,0" VerticalAlignment="Top" Width="244" Height="24" />
         <Label Content="{Binding MyCampusCount}" HorizontalAlignment="Left" Margin="279,205,0,0"  VerticalAlignment="Top" Width="238" Height="39"  
               />
-        <Label Content="{Binding MyDepartmentCount}" HorizontalAlignment="Left" Margin="381,267,0,0" VerticalAlignment="Top" Width="136" Height="24"/>
+        <Label Content="{Binding MyDepartmentCount}" HorizontalAlignment="Left" Margin="338,267,0,0" VerticalAlignment="Top" Width="179" Height="24"/>
 
         <Label>
         <Label.RenderTransform>

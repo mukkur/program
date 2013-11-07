@@ -121,8 +121,8 @@ namespace WpfApplication1
                 this.MyDepartments = new ObservableCollection<Dept>();
                 var departments = db3.Departments.Select(x => new Dept{CampusId = x.CampusId, Name = x.Name, DepartId = x.DepartId});
 
-                //int k = departments.Count();
-                //this.MyDepartmentCount = "Department Count = " + k.ToString();
+                int k = departments.Count();
+                this.MyDepartmentCount = "Department Count = " + k.ToString();
 
 
                foreach (var department in departments)
