@@ -61,12 +61,26 @@ namespace WpfApplication1
             get { return BookCount; }
             set { BookCount = value; }
         }
+        private string CampusCount;
+
+        public string MyCampusCount
+        {
+            get { return CampusCount; }
+            set { CampusCount = value; }
+        }
         private string BranchCount;
 
         public string MyBranchCount
         {
             get { return BranchCount; }
             set { BranchCount = value; }
+        }
+        private string DepartmentCount;
+
+        public string MyDepartmentCount
+        {
+            get { return DepartmentCount; }
+            set { DepartmentCount = value; }
         }
         //Constructor
         public MainWindowVM()
@@ -84,9 +98,10 @@ namespace WpfApplication1
                 var db2 = new TabelContainer();
                 this.MyCampus = new ObservableCollection<Campus>();
                 var campus = db2.Campus;
-
-                int i = campus.Count();
-                this.MyBookCount = "Campus Count = " + i.ToString();
+                int m = campus.Count();
+                this.MyCampusCount = "Campus Count = " + m.ToString();
+                //int i = books.Count();
+               // this.MyBookCount = "Book Count = " + i.ToString();
 
                 foreach (var camp in campus)
                 {
@@ -97,7 +112,7 @@ namespace WpfApplication1
                 this.MyBranches = new ObservableCollection<Branch>();
                 var branches = db3.Branches;
                 int j = branches.Count();
-                this.MyBranchCount = j.ToString();
+                this.MyBranchCount ="Branch Count = " + j.ToString();
                 foreach (var branch in branches)
                 {
                     this.MyBranches.Add(branch);
@@ -105,7 +120,12 @@ namespace WpfApplication1
                 var db4 = new TabelContainer();
                 this.MyDepartments = new ObservableCollection<Dept>();
                 var departments = db3.Departments.Select(x => new Dept{CampusId = x.CampusId, Name = x.Name, DepartId = x.DepartId});
-                foreach (var department in departments)
+
+                //int k = departments.Count();
+                //this.MyDepartmentCount = "Department Count = " + k.ToString();
+
+
+               foreach (var department in departments)
                 {
                     this.MyDepartments.Add(department);
                 }
@@ -116,6 +136,9 @@ namespace WpfApplication1
 
                
                 var books = db.Books;
+                int i = books.Count();
+                this.MyBookCount = "Book Count = " + i.ToString();
+
                 foreach (var book in books)
                 {
                     this.MyBook.Add(book);

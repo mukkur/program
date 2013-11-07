@@ -19,14 +19,29 @@
                 </TransformGroup>
             </DataGrid.RenderTransform>
         </DataGrid>
-        <DataGrid HorizontalAlignment="Left" Margin="22,306,0,0" VerticalAlignment="Top"
-                  ItemsSource="{Binding MyBranches}" Width="131" Height="35" SelectionChanged="DataGrid_SelectionChanged_1"></DataGrid>
-        <DataGrid HorizontalAlignment="Left" Margin="22,366,0,20"
-                  ItemsSource="{Binding MyDepartments}" RenderTransformOrigin="-6.667,5.923" Width="131" SelectionChanged="DataGrid_SelectionChanged_2"/>
-        <Label Content="{Binding MyBookCount}" HorizontalAlignment="Left" Margin="22,10,0,0" Name="count" VerticalAlignment="Top" Width="238" Height="39"
+        <DataGrid HorizontalAlignment="Left" Margin="22,308,0,0" VerticalAlignment="Top"
+                  ItemsSource="{Binding MyBranches}" Width="238" Height="62" SelectionChanged="DataGrid_SelectionChanged_1"></DataGrid>
+        <DataGrid HorizontalAlignment="Left" Margin="315,308,0,19"
+                  ItemsSource="{Binding MyDepartments}" RenderTransformOrigin="-6.667,5.923" Width="238" SelectionChanged="DataGrid_SelectionChanged_2"/>
+        <Label Content="{Binding MyBookCount}" HorizontalAlignment="Left" Margin="22,10,0,0" Name="count" VerticalAlignment="Top" Width="238" Height="39" RenderTransformOrigin="0.25,1.867"
               />
-        <Label Content="{Binding MyBranchCount}" HorizontalAlignment="Left" Margin="287,210,0,0" VerticalAlignment="Top" Width="162" Height="32"/>
+        <Label Content="{Binding MyBranchCount}" HorizontalAlignment="Left" Margin="40,384,0,0" VerticalAlignment="Top" Width="226" Height="15" />
+        <Label Content="{Binding MyCampusCount}" HorizontalAlignment="Left" Margin="279,205,0,0"  VerticalAlignment="Top" Width="238" Height="39"  
+              />
+        <Label Content="{Binding MyDepartmentCount}" HorizontalAlignment="Left" Margin="381,267,0,0" VerticalAlignment="Top" Width="136" Height="24"/>
 
+        <Label>
+        <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform X="6"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+
+        </Label>
+        
 
     </Grid>
 </Window>
