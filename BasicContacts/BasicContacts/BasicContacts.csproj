@@ -83,6 +83,9 @@
     <Compile Include="ContactsWindow.xaml.cs">
       <DependentUpon>ContactsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FBUser.xaml.cs">
+      <DependentUpon>FBUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TodoItem.cs" />
     <Compile Include="TodoVM.cs" />
     <Page Include="BrowserWindow.xaml">
@@ -90,6 +93,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ContactsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FBUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
