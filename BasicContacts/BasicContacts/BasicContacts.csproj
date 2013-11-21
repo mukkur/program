@@ -57,6 +57,8 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.0.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
     <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -85,6 +87,11 @@
     </Compile>
     <Compile Include="FBUser.xaml.cs">
       <DependentUpon>FBUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ContactsSoap\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="TodoItem.cs" />
     <Compile Include="TodoVM.cs" />
@@ -143,9 +150,37 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Service References\ContactsSoap\ContactsSoap.wsdl" />
+    <None Include="Service References\ContactsSoap\ContactsSoap.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ContactsSoap\ContactsSoap1.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ContactsSoap\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ContactsSoap\ContactsSoap.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ContactsSoap\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ContactsSoap\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ContactsSoap\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

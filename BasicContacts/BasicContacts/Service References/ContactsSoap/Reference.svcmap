@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fd9f8e1b-b2a2-4a61-9c7e-bd15635ed056" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:51676/ContactsSoap.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ContactsSoap.xsd" MetadataType="Schema" ID="bd6587a1-a7f9-4497-afb7-d9762454fe39" SourceId="1" SourceUrl="http://localhost:51676/ContactsSoap.svc?xsd=xsd0" />
+    <MetadataFile FileName="ContactsSoap.wsdl" MetadataType="Wsdl" ID="364469cd-f254-49cd-ba92-ccf06a4ac465" SourceId="1" SourceUrl="http://localhost:51676/ContactsSoap.svc?wsdl" />
+    <MetadataFile FileName="ContactsSoap1.xsd" MetadataType="Schema" ID="55bbc93e-b23c-4a0b-b4a9-40c4b400859d" SourceId="1" SourceUrl="http://localhost:51676/ContactsSoap.svc?xsd=xsd1" />
+    <MetadataFile FileName="ContactsSoap.disco" MetadataType="Disco" ID="6f335232-0c6a-409f-a8e8-7554ed9fb858" SourceId="1" SourceUrl="http://localhost:51676/ContactsSoap.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
